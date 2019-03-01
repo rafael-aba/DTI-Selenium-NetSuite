@@ -59,40 +59,35 @@ elem_helper = WebDriverWait(driver,1).until(EC.presence_of_element_located((By.X
 
 # FILL DAYS
 if config['DEFAULT']['MONDAY'] == 'True':
-	day = WebDriverWait(driver,1).until(EC.presence_of_element_located((By.XPATH,'//*[@id="timeitem_splits"]/tbody/tr[2]/td[6]/div'))) 
-	day.click()
+	day = WebDriverWait(driver,1).until(EC.presence_of_element_located((By.XPATH,'//*[@id="timeitem_splits"]/tbody/tr[2]/td[6]'))) 
 	day.click()
 	day = WebDriverWait(driver,1).until(EC.presence_of_element_located((By.ID,'hours1'))) 
 	day.send_keys(config['DEFAULT']['MONDAY_HOURS'])
 	elem_helper.click()
 
 if config['DEFAULT']['TUESDAY'] == 'True':
-	day = WebDriverWait(driver,1).until(EC.presence_of_element_located((By.XPATH,'//*[@id="timeitem_splits"]/tbody/tr[2]/td[7]/div'))) 
-	day.click()
+	day = WebDriverWait(driver,1).until(EC.presence_of_element_located((By.XPATH,'//*[@id="timeitem_splits"]/tbody/tr[2]/td[7]'))) 
 	day.click()
 	day = WebDriverWait(driver,1).until(EC.presence_of_element_located((By.ID,'hours2'))) 
 	day.send_keys(config['DEFAULT']['TUESDAY_HOURS'])
 	elem_helper.click()
 
 if config['DEFAULT']['WEDNESDAY'] == 'True':
-	day = WebDriverWait(driver,1).until(EC.presence_of_element_located((By.XPATH,'//*[@id="timeitem_splits"]/tbody/tr[2]/td[8]/div'))) 
-	day.click()
+	day = WebDriverWait(driver,1).until(EC.presence_of_element_located((By.XPATH,'//*[@id="timeitem_splits"]/tbody/tr[2]/td[8]'))) 
 	day.click()
 	day = WebDriverWait(driver,1).until(EC.presence_of_element_located((By.ID,'hours3'))) 
 	day.send_keys(config['DEFAULT']['WEDNESDAY_HOURS'])
 	elem_helper.click()
 
 if config['DEFAULT']['THURSDAY'] == 'True':
-	day = WebDriverWait(driver,1).until(EC.presence_of_element_located((By.XPATH,'//*[@id="timeitem_splits"]/tbody/tr[2]/td[9]/div'))) 
-	day.click()
+	day = WebDriverWait(driver,1).until(EC.presence_of_element_located((By.XPATH,'//*[@id="timeitem_splits"]/tbody/tr[2]/td[9]'))) 
 	day.click()
 	day = WebDriverWait(driver,1).until(EC.presence_of_element_located((By.ID,'hours4'))) 
 	day.send_keys(config['DEFAULT']['THURSDAY_HOURS'])
 	elem_helper.click()
 
 if config['DEFAULT']['FRIDAY'] == 'True':
-	day = WebDriverWait(driver,1).until(EC.presence_of_element_located((By.XPATH,'//*[@id="timeitem_splits"]/tbody/tr[2]/td[10]/div'))) 
-	day.click()
+	day = WebDriverWait(driver,1).until(EC.presence_of_element_located((By.XPATH,'//*[@id="timeitem_splits"]/tbody/tr[2]/td[10]'))) 
 	day.click()
 	day = WebDriverWait(driver,1).until(EC.presence_of_element_located((By.ID,'hours5'))) 
 	day.send_keys(config['DEFAULT']['FRIDAY_HOURS'])
