@@ -61,12 +61,14 @@ elem_helper = WebDriverWait(driver,1).until(EC.presence_of_element_located((By.X
 if config['DEFAULT']['MONDAY'] == 'True':
 	day = WebDriverWait(driver,1).until(EC.presence_of_element_located((By.XPATH,'//*[@id="timeitem_splits"]/tbody/tr[2]/td[6]/div'))) 
 	day.click()
+	day.click()
 	day = WebDriverWait(driver,1).until(EC.presence_of_element_located((By.ID,'hours1'))) 
 	day.send_keys(config['DEFAULT']['MONDAY_HOURS'])
 	elem_helper.click()
 
 if config['DEFAULT']['TUESDAY'] == 'True':
 	day = WebDriverWait(driver,1).until(EC.presence_of_element_located((By.XPATH,'//*[@id="timeitem_splits"]/tbody/tr[2]/td[7]/div'))) 
+	day.click()
 	day.click()
 	day = WebDriverWait(driver,1).until(EC.presence_of_element_located((By.ID,'hours2'))) 
 	day.send_keys(config['DEFAULT']['TUESDAY_HOURS'])
@@ -75,6 +77,7 @@ if config['DEFAULT']['TUESDAY'] == 'True':
 if config['DEFAULT']['WEDNESDAY'] == 'True':
 	day = WebDriverWait(driver,1).until(EC.presence_of_element_located((By.XPATH,'//*[@id="timeitem_splits"]/tbody/tr[2]/td[8]/div'))) 
 	day.click()
+	day.click()
 	day = WebDriverWait(driver,1).until(EC.presence_of_element_located((By.ID,'hours3'))) 
 	day.send_keys(config['DEFAULT']['WEDNESDAY_HOURS'])
 	elem_helper.click()
@@ -82,12 +85,14 @@ if config['DEFAULT']['WEDNESDAY'] == 'True':
 if config['DEFAULT']['THURSDAY'] == 'True':
 	day = WebDriverWait(driver,1).until(EC.presence_of_element_located((By.XPATH,'//*[@id="timeitem_splits"]/tbody/tr[2]/td[9]/div'))) 
 	day.click()
+	day.click()
 	day = WebDriverWait(driver,1).until(EC.presence_of_element_located((By.ID,'hours4'))) 
 	day.send_keys(config['DEFAULT']['THURSDAY_HOURS'])
 	elem_helper.click()
 
 if config['DEFAULT']['FRIDAY'] == 'True':
 	day = WebDriverWait(driver,1).until(EC.presence_of_element_located((By.XPATH,'//*[@id="timeitem_splits"]/tbody/tr[2]/td[10]/div'))) 
+	day.click()
 	day.click()
 	day = WebDriverWait(driver,1).until(EC.presence_of_element_located((By.ID,'hours5'))) 
 	day.send_keys(config['DEFAULT']['FRIDAY_HOURS'])
@@ -103,13 +108,16 @@ elem = WebDriverWait(driver,10).until(EC.presence_of_element_located((By.ID,'tim
 elem = WebDriverWait(driver,1).until(EC.presence_of_element_located((By.ID,'btn_secondarymultibutton_submitter'))) 
 elem.click()
 
-time.sleep(15)
-elem = driver.find_elements_by_class_name('listtexthl')
-for val in elem:
-	if val.value_of_css_property('background-color') == 'rgba(152, 181, 227, 1)':
-		print('SUCESSO!')
 
-time.sleep(10)
+loop = True
+while loop :
+	elem = driver.find_elements_by_class_name('listtexthl')
+	for val in elem:
+		if val.value_of_css_property('background-color') == 'rgba(152, 181, 227, 1)':
+			print('SUCESSO!')
+			loop = False
+			break
+
 driver.close()
 
 
